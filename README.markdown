@@ -10,13 +10,13 @@ USAGE
 
     class Object
 
-      puts Expect('itself') { self }.to :respond_to, :Expect
+      puts Expect(inspect) { self }.to :respond_to, :Expect
 
     end
 
     [1, 2].instance_eval do
 
-      puts Expect('number of elements') { |e|
+      puts Expect("#{ inspect }'s number of elements") { |e|
         e.using(':size') { size }
         e.using(':length') { length }
       }.to_be 2

@@ -18,7 +18,7 @@ class Expectation
 
   protected
   def describe_array(array)
-    array.empty?? '' : " with #{ array.map { |e| e.inspect }.join ', ' }"
+    array.empty?? '' : " #{ array.map { |e| e.inspect }.join ', ' }"
   end
 
   def eval(collector, verb_and_object, *args, &expector)
