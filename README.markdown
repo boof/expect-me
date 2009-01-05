@@ -10,15 +10,15 @@ USAGE
 
     class Object
 
-      puts Expect('itself', self) { |object_class| object_class }.to :respond_to, :Expect
+      puts Expect('itself') { self }.to :respond_to, :Expect
 
     end
 
     [1, 2].instance_eval do
 
-      puts Expect('number of elements', self) { |array|
-        using(':size') { array.size }
-        using(':length') { array.size }
+      puts Expect('number of elements') { |e|
+        e.using(':size') { size }
+        e.using(':length') { length }
       }.to_be 2
 
     end
@@ -26,8 +26,8 @@ USAGE
 TODO
 ----
 
-* bm build_results
-* to_be\_a
-* to_be Comparable
-* in_delta
+* bm build\_results
+* to\_be\_a
+* to\_be Comparable
+* in\_delta
 * collector => formatter => outputter
