@@ -1,0 +1,7 @@
+require "#{ File.dirname __FILE__ }/expectation"
+require "#{ File.dirname __FILE__ }/expectation/expectations"
+require "#{ File.dirname __FILE__ }/expectation/method_expectations"
+require "#{ File.dirname __FILE__ }/expectation/exception_expectations"
+require "#{ File.dirname __FILE__ }/expectation/collectors"
+require "#{ File.dirname __FILE__ }/expectation/results"
+require "#{ File.dirname __FILE__ }/core_extension"
