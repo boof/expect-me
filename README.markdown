@@ -1,12 +1,12 @@
-tobe - micro (or even nano) Testing Framework
-=============================================
+Expect /me - where tests belong!
+================================
 
-Put the tests where they belong!
+"Expect /me" is a very small testing framework that works directly in the context of your Objects that you want to test. It will enforce you to do make single behaviour expectations while you can specify multiple ways that reflect that behaviour. 
 
-USAGE
------
+SYNOPSIS
+--------
 
-    require 'lib/tobe'
+    require 'expect/me'
 
     class Object
 
@@ -31,3 +31,5 @@ TODO
 * to\_be Comparable
 * in\_delta
 * collector => formatter => outputter
+* RakeTask
+* Gemify
