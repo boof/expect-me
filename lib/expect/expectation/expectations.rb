@@ -2,10 +2,10 @@ class Expectation
   module Expectations
 
     P_CHECK = proc do |value, *expected_values|
-      expected_values.empty? && value || expected_values == [*value]
+      expected_values.empty? && value || expected_values.first == value
     end
     N_CHECK = proc do |value, *expected_values|
-      !( expected_values.empty? && value || expected_values == [*value] )
+      !( expected_values.empty? && value || expected_values.first == value )
     end
 
     def to_be(*expected_values)

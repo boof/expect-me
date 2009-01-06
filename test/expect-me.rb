@@ -1,4 +1,4 @@
-require "#{ File.dirname __FILE__ }/../lib/tobe.rb"
+require "#{ File.dirname __FILE__ }/../lib/expect/me.rb"
 
 class Expectation
   class Collector
@@ -102,18 +102,20 @@ false.instance_eval do
 
 end
 
-[:foo].instance_eval do
+%w[foo bar baz].instance_eval do
 
-  puts Expect("'Expect [:foo] to include :foo'") {
+  puts Expect("'Expect #{ inspect } to include 'foo''") {
 
-    Expect { self }.to :include, :foo
+    Expect { self }.to :include, 'foo'
 
   }.to :pass
 
-  puts Expect("'Expect [:foo] to include :bar'") {
+  puts Expect("'Expect #{ inspect } to include 'bart''") {
 
-    Expect { self }.to :include, :bar
+    Expect { self }.to :include, 'bart'
 
   }.to :fail
+  
+  puts Expect(inspect) { self }.to_be %w[foo bar baz]
 
 end

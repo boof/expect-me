@@ -26,6 +26,7 @@ SYNOPSIS
 TODO
 ----
 
+* fix 'Expect nil not\_to\_be'
 * bm build\_results
 * to\_be\_a
 * to\_be Comparable
